@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      database: mongock
+      username: root
+      password: password
+      authentication-database: admin
+
+mongock:
+  # entry point to `@ChangeUnit`
+  migration-scan-package:
+    - com.bwgjoseph.springbootmongock.migration
+  track-ignored: true
+  runner-type: InitializingBean
+  # throwing `MongockException: Property transaction-enabled=true, but transactionManager not provide`
+  # transaction-enabled: true
